@@ -1,8 +1,22 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  padding: 2%;
+  height: 100vh;
 }
 
 body {
+  height: 100%;
+  overflow: hidden;
   background-color: #E9D3C5;
+}
+
+.app-container {
+  display: grid;
+  height: 100%;
+  border: 2px solid #000000;
 }
