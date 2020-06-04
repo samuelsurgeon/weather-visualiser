@@ -19,10 +19,67 @@ body {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "e e . e e . e e e"
+    "e e e e e e e e e"
+    "e e e e e e e e e"
+    "e e e e e e e e e"
+    "e e e e e e e e e"
+    "e e e e e e e e e";
   height: 100%;
   border: 1px solid #000000;
 }
 
 .empty {
+  grid-area: e;
   border: 1px solid #000000;
 }
+
+.sunrise {
+  grid-area: sunrise;
+}
+
+.sunset {
+  grid-area: sunset;
+}
+
+.weather-icon {
+  grid-area: weather-icon;
+}
+
+.weather-description {
+  grid-area: weather-description;
+}
+
+.coordinates {
+  grid-area: coordinates;
+}
+
+.search {
+  grid-area: search;
+}
+
+.city {
+  grid-area: city;
+}
+
+.visibility {
+  grid-area: visibility;
+}
+
+.api-credit {
+  grid-area: api-credit;
+}
+
+.feels-like {
+  grid-area: feels-like;
+}
+
+.date-time {
+  grid-area: date-time;
+}
+
+.pressure {
+  
+}
+
