@@ -35,6 +35,10 @@ body {
   background-color: #FABA63;
 }
 
+.sunrise-arrow {
+  max-width: 6rem;
+}
+
 .sunset {
   background-color: #C9CCD1;
 }
