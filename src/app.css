@@ -19,67 +19,96 @@ body {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  grid-template-areas:
-    "e e . e e . e e e"
-    "e e e e e e e e e"
-    "e e e e e e e e e"
-    "e e e e e e e e e"
-    "e e e e e e e e e"
-    "e e e e e e e e e";
   height: 100%;
   border: 1px solid #000000;
 }
 
 .empty {
-  grid-area: e;
   border: 1px solid #000000;
 }
 
 .sunrise {
-  grid-area: sunrise;
+  border: 1px solid #000000;
 }
 
 .sunset {
-  grid-area: sunset;
+  border: 1px solid #000000;
 }
 
 .weather-icon {
-  grid-area: weather-icon;
+  border: 1px solid #000000;
 }
 
 .weather-description {
-  grid-area: weather-description;
+  border: 1px solid #000000;
 }
 
 .coordinates {
-  grid-area: coordinates;
+  border: 1px solid #000000;
 }
 
 .search {
-  grid-area: search;
+  grid-column: 2 / 6;
+  border: 1px solid #000000;
+  background-color: #1E1516;
 }
 
 .city {
-  grid-area: city;
+  grid-column: 6 / 10;
+  border: 1px solid #000000;
 }
 
 .visibility {
-  grid-area: visibility;
+  border: 1px solid #000000;
 }
 
 .api-credit {
-  grid-area: api-credit;
+  border: 1px solid #000000;
 }
 
 .feels-like {
-  grid-area: feels-like;
+  border: 1px solid #000000;
 }
 
 .date-time {
-  grid-area: date-time;
+  grid-column: 8 / 10;
+  border: 1px solid #000000;
 }
 
 .pressure {
-  
+  border: 1px solid #000000;
+}
+
+.temperature {
+  grid-column: 6 / 8;
+  border: 1px solid #000000;
+}
+
+.humidity {
+  border: 1px solid #000000;
+}
+
+.low {
+  border: 1px solid #000000;
+}
+
+.high {
+  border: 1px solid #000000;
+}
+
+.website-credit {
+  border: 1px solid #000000;
+}
+
+.timezone {
+  border: 1px solid #000000;
+}
+
+.wind {
+  border: 1px solid #000000;
+}
+
+.cloudiness {
+  border: 1px solid #000000;
 }
 
