@@ -29,10 +29,12 @@ body {
 
 .sunrise {
   border: 1px solid #000000;
+  background-color: #FABA63;
 }
 
 .sunset {
   border: 1px solid #000000;
+  background-color: #C9CCD1;
 }
 
 .weather-icon {
@@ -45,6 +47,7 @@ body {
 
 .coordinates {
   border: 1px solid #000000;
+  background-color: #F9ADB9;
 }
 
 .search {
@@ -60,6 +63,7 @@ body {
 
 .visibility {
   border: 1px solid #000000;
+  background-color: #7DD0C4;
 }
 
 .api-credit {
@@ -77,6 +81,7 @@ body {
 
 .pressure {
   border: 1px solid #000000;
+  background-color: #C9CCD1;
 }
 
 .temperature {
@@ -86,6 +91,7 @@ body {
 
 .humidity {
   border: 1px solid #000000;
+  background-color: #AEBBC2;
 }
 
 .low {
@@ -102,6 +108,7 @@ body {
 
 .timezone {
   border: 1px solid #000000;
+  background-color: #FFCA80;
 }
 
 .wind {
@@ -110,5 +117,6 @@ body {
 
 .cloudiness {
   border: 1px solid #000000;
+  background-color: #C3D9D5;
 }
 
