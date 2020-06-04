@@ -32,11 +32,15 @@ body {
 }
 
 .sunrise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #FABA63;
 }
 
 .sunrise-arrow {
-  max-width: 6rem;
+  max-width: 5rem;
 }
 
 .sunset {
