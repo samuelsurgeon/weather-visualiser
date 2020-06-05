@@ -369,6 +369,18 @@ body {
   background-color: #E9D3C5;
 }
 
+.timezone-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.timezone-text {
+  font-size: 2rem;
+}
+
 .wind {
   background-color: #E9D3C5;
 }
