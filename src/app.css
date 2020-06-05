@@ -347,7 +347,15 @@ body {
 }
 
 .website-credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #E9D3C5;
+}
+
+.website-credit-text {
+  font-size: 1rem;
+  line-height: 1.15rem;
 }
 
 .timezone {
