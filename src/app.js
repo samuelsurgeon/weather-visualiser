@@ -3,12 +3,12 @@ const api = {
   baseurl: 'http://api.openweathermap.org/data/2.5/'
 }
 
-const searchbox = document.querySelector('.search-box');
-searchbox.addEventListener('keypress', setQuery);
+const searchField = document.querySelector('.search-field');
+searchField.addEventListner('keypress', setQuery);
 
-function setQuery(evt) {
-  if (evt.keyCode === 13) {
-    getResults(searchbox.value);
+function setQuery(event) {
+  if (event.keyCode === 13) {
+    getResults(searchField.value);
   }
 }
 
@@ -21,6 +21,7 @@ function getResults(query) {
 
 function displayResults(weather) {
   console.log(weather);
+  /*
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
@@ -36,8 +37,9 @@ function displayResults(weather) {
 
   let hilow = document.querySelector('.hi-low');
   hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
+  */
 }
-
+/*
 function dateBuilder (d) {
   let months = ['January', 'Februrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -49,3 +51,5 @@ function dateBuilder (d) {
 
   return `${day} ${date} ${month} ${year}`;
 }
+
+*/
