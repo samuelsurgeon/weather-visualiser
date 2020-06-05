@@ -120,12 +120,39 @@ body {
 
 .search {
   grid-column: 2 / 6;
+  display: flex;
   background-color: #1E1516;
+}
+
+.search-field {
+  border: none;
+  padding-left: 2rem;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 600;
+  outline: none;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.search-field::placeholder {
+  color: #FFFFFF
+}
+
+.search-field::selection {
+  background-color: #E9D3C5;
 }
 
 .city {
   grid-column: 6 / 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #E9D3C5;
+}
+
+.city-text {
+  font-size: 3rem;
 }
 
 .visibility {
