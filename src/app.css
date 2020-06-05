@@ -245,7 +245,27 @@ body {
 
 .temperature {
   grid-column: 6 / 8;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
   background-color: #E9D3C5;
+}
+
+.temperature-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.temperature-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 90%;
+}
+
+.temperature-text {
+
 }
 
 .humidity {
