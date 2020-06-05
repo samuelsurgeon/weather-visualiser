@@ -99,9 +99,8 @@ body {
 }
 
 .latitude-heading {
-  position: relative;
-  top: 0.25rem;
   font-size: 0.7rem;
+  line-height: 0.5rem;
 }
 
 .latitude-body {
@@ -109,9 +108,8 @@ body {
 }
 
 .longitude-heading {
-  position: relative;
-  top: 0.25rem;
   font-size: 0.7rem;
+  line-height: 0.5rem;
 }
 
 .longitude-body {
@@ -185,7 +183,7 @@ body {
 }
 
 .feels-like {
-  padding: 0.5rem;
+  padding: 0.35rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -194,12 +192,12 @@ body {
 
 .feels-like-heading {
   font-size: 0.7rem;
+  line-height: 0.5rem;
 }
 
 .feels-like-body {
-  position: relative;
-  top: 0.35rem;
   font-size: 2.5rem;
+  line-height: 1.75rem;
 }
 
 .date-time {
@@ -245,7 +243,7 @@ body {
 
 .temperature {
   grid-column: 6 / 8;
-  padding: 0.25rem;
+  padding: 0.35rem;
   display: flex;
   flex-direction: column;
   background-color: #E9D3C5;
@@ -254,6 +252,7 @@ body {
 .temperature-heading {
   font-size: 0.7rem;
   font-weight: 600;
+  line-height: 0.5rem;
   text-align: left;
 }
 
@@ -261,15 +260,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
   height: 90%;
 }
 
 .temperature-text {
-
+  font-size: 8rem;
+  line-height: 5rem;
 }
 
 .humidity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #AEBBC2;
+}
+
+.humidity-heading {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.humidity-body {
+  font-size: 2.5rem;
 }
 
 .low {
