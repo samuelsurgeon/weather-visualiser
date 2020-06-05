@@ -21,6 +21,14 @@ function getResults(query) {
 
 function displayResults(weather) {
   console.log(weather);
+  
+  let sunrise = new Date(weather.sys.sunrise * 1000);
+  let sunriseHours = sunrise.getHours();
+  let sunriseMinutes = sunrise.getMinutes();
+  let formattedSunrise = `${sunriseHours}:${
+
+  let sunriseTime = document.querySelector('.sunrise-time');
+  sunriseTime.innerText = `${}`;
   /*
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
