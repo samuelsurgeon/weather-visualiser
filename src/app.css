@@ -382,7 +382,17 @@ body {
 }
 
 .wind {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #E9D3C5;
+}
+
+.wind-arrow {
+  max-width: 5rem;
+  /* Get rid of this here and only use the rotate function in JS */
+  transform: rotate(45deg);
 }
 
 .cloudiness {
