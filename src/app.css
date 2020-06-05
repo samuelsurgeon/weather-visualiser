@@ -396,6 +396,19 @@ body {
 }
 
 .cloudiness {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #C3D9D5;
+}
+
+.cloudiness-heading {
+  font-weight: 100;
+}
+
+.cloudiness-body {
+  margin-top: 0.25rem;
+  font-size: 3rem;
 }
 
