@@ -44,10 +44,22 @@ body {
 }
 
 .sunset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #C9CCD1;
 }
 
+.sunset-arrow {
+  transform: rotate(180deg);
+  max-width: 5rem;
+}
+
 .weather-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #E9D3C5;
 }
 
