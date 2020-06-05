@@ -156,15 +156,50 @@ body {
 }
 
 .visibility {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #7DD0C4;
 }
 
+.visibility-heading {
+  font-weight: 100;
+}
+
+.visibility-body {
+  margin-top: 0.25rem;
+  font-size: 2rem;
+}
+
 .api-credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #E9D3C5;
 }
 
+.api-credit-text {
+  font-size: 1rem;
+  line-height: 1.15rem;
+}
+
 .feels-like {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   background-color: #E9D3C5;
+}
+
+.feels-like-heading {
+  font-size: 0.7rem;
+}
+
+.feels-like-body {
+  position: relative;
+  top: 1rem;
+  font-size: 2.5rem;
 }
 
 .date-time {
