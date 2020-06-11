@@ -118,7 +118,8 @@ body {
 }
 
 .search {
-  grid-column: 2 / 6;
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
   display: flex;
   background-color: #1E1516;
 }
@@ -214,14 +215,8 @@ body {
 }
 
 .date-time {
-  grid-column: 8 / 10;
-  background-color: #E9D3C5;
-}
-
-.date-time-heading {
-  border-bottom: 1px solid #000000;
-  font-size: 0.7rem;
-  font-weight: 600;
+  grid-column: 5 / 10;
+  grid-row: 1 / 2;
   background-color: #E9D3C5;
 }
 
@@ -229,12 +224,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
+  height: 100%;
 }
 
 .date-time-text {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  font-size: 3rem;
 }
 
 .pressure {

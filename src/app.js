@@ -92,7 +92,7 @@ function displayResults(weather) {
   const period = dateArray[4].toUpperCase();
   
   const dateTimeText = document.querySelector('.date-time-text');
-  dateTimeText.innerHTML = `${day},<br>${date} ${month} ${year}<br>${time}${period}`;
+  dateTimeText.innerHTML = `${day} ${time}${period}`;
 
   // Pressure
   const pressureText = document.querySelector('.pressure-body');
