@@ -21,14 +21,15 @@ function getResults(query) {
 
 function displayResults(weather) {
   console.log(weather);
+  const UTC = timezoneToUTC(weather.timezone);
   
-  let sunrise = new Date(weather.sys.sunrise * 1000);
-  let sunriseHours = sunrise.getHours();
-  let sunriseMinutes = sunrise.getMinutes();
-  let formattedSunrise = `${sunriseHours}:${
+  let sunriseDate = new Date(weather.sys.sunrise * 1000);
+  let sunriseHours = sunriseDate.getHours();
+  let sunriseMinutes = '0' + sunriseDate.getMinutes();
+  let formattedSunrise = `${sunriseHours}:${sunriseMinutes.substr(-2)}`;
 
   let sunriseTime = document.querySelector('.sunrise-time');
-  sunriseTime.innerText = `${}`;
+  sunriseTime.innerText = formattedSunrise;
   /*
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
@@ -46,6 +47,21 @@ function displayResults(weather) {
   let hilow = document.querySelector('.hi-low');
   hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
   */
+}
+
+function timezoneToUTC(timezone) {
+  return timezone / 3600;
+}
+
+function IANATimezoneBuilder(UTC) {
+  const timezones = { 
+    -11: 'Pacific/Niue', 
+    -10: 'Pacific/Honolulu', 
+    -9: 'America/Anchorage',
+    -8: 'America/Los_Angeles',
+    -7: 'America/Phoenix',
+    -6: 'America/Mexico_City',
+    -5: '
 }
 /*
 function dateBuilder (d) {
