@@ -97,6 +97,26 @@ function displayResults(weather) {
   const dateTimeText = document.querySelector('.date-time-text');
   dateTimeText.innerHTML = `${day},<br>${date} ${month} ${year}<br>${time}${period}`;
 
+  // Pressure
+  const pressureText = document.querySelector('.pressure-body');
+  pressureText.innerText = weather.main.pressure;
+
+  // Temperature
+  const temperatureText = document.querySelector('.temperature-text');
+  temperatureText.innerText = `${Math.floor(weather.main.temp)}°c`;
+
+  // Humidity
+  const humidityText = document.querySelector('.humidity-body');
+  humidityText.innerText = weather.main.humidity;
+
+  // Low
+  const lowText = document.querySelector('.low-text');
+  lowText.innerText = `${Math.floor(weather.main.temp_min)}°c`;
+
+  // High
+  const highText = document.querySelector('.high-text');
+  highText.innerText = `${Math.floor(weather.main.temp_max)}°c`;
+
   //
   //
   /*
