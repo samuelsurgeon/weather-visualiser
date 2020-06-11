@@ -22,6 +22,8 @@ function getResults(query) {
 function displayResults(weather) {
   console.log(weather);
   const UTC = timezoneToUTC(weather.timezone);
+
+  console.log(IANATimezoneBuilder(UTC));
   
   let sunriseDate = new Date(weather.sys.sunrise * 1000);
   let sunriseHours = sunriseDate.getHours();
@@ -55,33 +57,35 @@ function timezoneToUTC(timezone) {
 
 function IANATimezoneBuilder(UTC) {
   const timezones = { 
-    -11: 'Pacific/Niue', 
-    -10: 'Pacific/Honolulu', 
-    -9: 'America/Anchorage',
-    -8: 'America/Los_Angeles',
-    -7: 'America/Phoenix',
-    -6: 'America/Mexico_City',
-    -5: 'America/New_York',
-    -4: 'America/Santiago',
-    -3: 'America/Argentina/Buenos_Aires',
-    -2: 'Atlantic/South_Georgia',
-    -1: 'Atlantic/Cape_Verde',
-    0: 'Europe/London',
-    1: 'Europe/Berlin',
-    2: 'Africa/Cairo',
-    3: 'Europe/Moscow',
-    4: 'Asia/Dubai',
-    5: 'Asia/Karachi',
-    6: 'Asia/Dhaka',
-    7: 'Asia/Jakarta',
-    8: 'Asia/Shanghai',
-    9: 'Asia/Tokyo',
-    10: 'Australia/Sydney',
-    11: 'Pacific/Norfolk',
-    12: 'Pacific/Auckland',
-    13: 'Pacific/Enderbury',
-    14: 'Pacific/Kiritimati'
+    '-11': 'Pacific/Niue', 
+    '-10': 'Pacific/Honolulu', 
+    '-9': 'America/Anchorage',
+    '-8': 'America/Los_Angeles',
+    '-7': 'America/Phoenix',
+    '-6': 'America/Mexico_City',
+    '-5': 'America/New_York',
+    '-4': 'America/Santiago',
+    '-3': 'America/Argentina/Buenos_Aires',
+    '-2': 'Atlantic/South_Georgia',
+    '-1': 'Atlantic/Cape_Verde',
+    '0': 'Europe/London',
+    '1': 'Europe/Berlin',
+    '2': 'Africa/Cairo',
+    '3': 'Europe/Moscow',
+    '4': 'Asia/Dubai',
+    '5': 'Asia/Karachi',
+    '6': 'Asia/Dhaka',
+    '7': 'Asia/Jakarta',
+    '8': 'Asia/Shanghai',
+    '9': 'Asia/Tokyo',
+    '10': 'Australia/Sydney',
+    '11': 'Pacific/Norfolk',
+    '12': 'Pacific/Auckland',
+    '13': 'Pacific/Enderbury',
+    '14': 'Pacific/Kiritimati'
   }
+
+  return timezones[UTC];
 }
 /*
 function dateBuilder (d) {
