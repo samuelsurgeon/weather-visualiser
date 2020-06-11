@@ -59,8 +59,7 @@ function displayResults(weather) {
   longitudeText.innerText = longitude;
 
   // City name
-  const cityText = document.querySelector('.city-text');
-  cityText.innerText = `${weather.name}, ${weather.sys.country}`;
+  searchField.value = `${weather.name}, ${weather.sys.country}`;
 
   // Visibility
   const visibilityText = document.querySelector('.visibility-body');

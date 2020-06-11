@@ -118,7 +118,7 @@ body {
 }
 
 .search {
-  grid-column: 1 / 5;
+  grid-column: 1 / 6;
   grid-row: 1 / 2;
   display: flex;
   background-color: #1E1516;
@@ -215,7 +215,7 @@ body {
 }
 
 .date-time {
-  grid-column: 5 / 10;
+  grid-column: 6 / 10;
   grid-row: 1 / 2;
   background-color: #E9D3C5;
 }
