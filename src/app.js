@@ -20,17 +20,41 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
+  // To delete after testing
   console.log(weather);
+
   const UTC = timezoneToUTC(weather.timezone);
   
+  // Sunrise Time
   const sunriseDate = new Date(weather.sys.sunrise * 1000).toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
-  console.log(sunriseDate);
   const sunriseDateArray = sunriseDate.split(/(\s+)/);
   const sunriseTime = sunriseDateArray[2].substring(0, sunriseDateArray[2].length - 3);
   const sunrisePeriod = sunriseDateArray[4].toUpperCase();
   const formattedSunriseTime = `${sunriseTime}${sunrisePeriod}`;
   const sunriseText = document.querySelector('.sunrise-time');
   sunriseText.innerText = formattedSunriseTime;
+
+  // Sunset Time
+  const sunsetDate = new Date(weather.sys.sunset * 1000).toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
+  const sunsetDateArray = sunsetDate.split(/(\s+)/);
+  const sunsetTime = sunsetDateArray[2].substring(0, sunsetDateArray[2].length - 3);
+  const sunsetPeriod = sunsetDateArray[4].toUpperCase();
+  const formattedSunsetTime = `${sunsetTime}${sunsetPeriod}`;
+  const sunsetText = document.querySelector('.sunset-time');
+  sunsetText.innerText = formattedSunsetTime;
+
+  // Icon
+  const iconImage = document.querySelector('.weather-icon-image');
+  iconImage.src = `./icons/${weather.weather[0].icon}@4x.png`;
+
+  // Weather Description
+  const weatherDescriptionFromApi = weather.weather[0].description;
+  const weatherDescriptionHtml = weatherDescriptionFromApi.replace(/\s/g, '<br>');
+  const weatherDescriptionText = document.querySelector('.weather-description-text');
+  console.log(weatherDescriptionHtml);
+  weatherDescriptionText.innerText = 'hihihih';
+  //weatherDescriptionText.innerHtml = weatherDescriptionHtml;
+
   /*
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
