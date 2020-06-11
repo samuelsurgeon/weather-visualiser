@@ -359,10 +359,22 @@ body {
   background-color: #FB536D;
 }
 
+.website-credit-container {
+  text-decoration: none;
+  color: black;
+}
+
+.website-credit-container:hover {
+  border: 1px solid #000000;
+  transform: scale(1.1);
+  transition: 0.4s;
+}
+
 .website-credit {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
   background-color: #E9D3C5;
 }
 
