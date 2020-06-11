@@ -49,12 +49,56 @@ function displayResults(weather) {
 
   // Weather Description
   const weatherDescriptionFromApi = weather.weather[0].description;
-  const weatherDescriptionHtml = weatherDescriptionFromApi.replace(/\s/g, '<br>');
-  const weatherDescriptionText = document.querySelector('.weather-description-text');
-  console.log(weatherDescriptionHtml);
-  weatherDescriptionText.innerText = 'hihihih';
-  //weatherDescriptionText.innerHtml = weatherDescriptionHtml;
+  const weatherDescriptionHtml = weatherDescriptionFromApi.replace(/\s/g, '<br>').toUpperCase();
+  const weatherDescriptionText = document.querySelector('.weather-description');
+  weatherDescriptionText.innerHTML = `<h2 class="weather-description-text">${weatherDescriptionHtml}</h2>`;
 
+  // Coordinates
+  const latitude = weather.coord.lat;
+  const longitude = weather.coord.lon;
+  const latitudeText = document.querySelector('.latitude-body');
+  latitudeText.innerText = latitude;
+  const longitudeText = document.querySelector('.longitude-body');
+  longitudeText.innerText = longitude;
+
+  // City name
+  const cityText = document.querySelector('.city-text');
+  cityText.innerText = `${weather.name}, ${weather.sys.country}`;
+
+  // Visibility
+  const visibilityText = document.querySelector('.visibility-body');
+  if ('visibility' in weather) {
+    const visibilityNumber = weather.visibility.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    visibilityText.innerText = `${visibilityNumber} m`;
+  } else {
+    visibilityText.innerText = 'No data';
+  }
+
+  // Feels Like
+  const feelsLikeText = document.querySelector('.feels-like-body');
+  feelsLikeText.innerText = `${Math.floor(weather.main.feels_like)}°c`;
+
+  // Date & Time
+  const months = ['January', 'Februrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dateFromIANA = new Date().toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
+  const dateArray = dateFromIANA.split(/(\s+)/);
+  const dateText = dateArray[0].substring(0, dateArray[0].length - 1);
+  const dateTextArray = dateText.split(/(\/)/);
+  const formattedDateText = `${dateTextArray[2]}/${dateTextArray[0]}/${dateTextArray[4]}`;
+  const dateObject = new Date(formattedDateText);
+  const day = days[dateObject.getDay()];
+  const date = dateObject.getDate();
+  const month = months[dateObject.getMonth()];
+  const year = dateObject.getFullYear();
+  const time = dateArray[2].substring(0, dateArray[2].length - 3);
+  const period = dateArray[4].toUpperCase();
+  
+  const dateTimeText = document.querySelector('.date-time-text');
+  dateTimeText.innerHTML = `${day},<br>${date} ${month} ${year}<br>${time}${period}`;
+
+  //
+  //
   /*
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
@@ -112,15 +156,7 @@ function IANATimezoneBuilder(UTC) {
 }
 /*
 function dateBuilder (d) {
-  let months = ['January', 'Februrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-  let day = days[d.getDay()];
-  let date = d.getDate();
-  let month = months[d.getMonth()];
-  let year = d.getFullYear();
-
-  return `${day} ${date} ${month} ${year}`;
 }
 
 */
