@@ -416,8 +416,7 @@ body {
 
 .wind-arrow {
   max-width: 5rem;
-  /* Get rid of this here and only use the rotate function in JS */
-  transform: rotate(45deg);
+  transition: 2s;
 }
 
 .cloudiness {

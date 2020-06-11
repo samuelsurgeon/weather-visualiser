@@ -117,6 +117,21 @@ function displayResults(weather) {
   const highText = document.querySelector('.high-text');
   highText.innerText = `${Math.floor(weather.main.temp_max)}°c`;
 
+  // Timezone
+  const timezoneText = document.querySelector('.timezone-text');
+  timezoneText.innerText = `UTC${UTC}`;
+
+  // Wind
+  const windText = document.querySelector('.wind-text');
+  windText.innerText = `${Math.floor(weather.wind.speed)}km/h`;
+
+  const windArrow = document.querySelector('.wind-arrow');
+  windArrow.style.transform = `rotate(${weather.wind.deg}deg)`;
+
+  // Cloudiness
+  const cloudinessText = document.querySelector('.cloudiness-body');
+  cloudinessText.innerText = `${weather.clouds.all}%`;
+
   //
   //
   /*
@@ -139,7 +154,9 @@ function displayResults(weather) {
 }
 
 function timezoneToUTC(timezone) {
-  return timezone / 3600;
+  let UTC = timezone / 3600;
+  if (UTC > 0) UTC = `+${UTC}`;
+  return UTC;
 }
 
 function IANATimezoneBuilder(UTC) {
