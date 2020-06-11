@@ -22,16 +22,15 @@ function getResults(query) {
 function displayResults(weather) {
   console.log(weather);
   const UTC = timezoneToUTC(weather.timezone);
-
-  console.log(IANATimezoneBuilder(UTC));
   
-  let sunriseDate = new Date(weather.sys.sunrise * 1000);
-  let sunriseHours = sunriseDate.getHours();
-  let sunriseMinutes = '0' + sunriseDate.getMinutes();
-  let formattedSunrise = `${sunriseHours}:${sunriseMinutes.substr(-2)}`;
-
-  let sunriseTime = document.querySelector('.sunrise-time');
-  sunriseTime.innerText = formattedSunrise;
+  const sunriseDate = new Date(weather.sys.sunrise * 1000).toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
+  console.log(sunriseDate);
+  const sunriseDateArray = sunriseDate.split(/(\s+)/);
+  const sunriseTime = sunriseDateArray[2].substring(0, sunriseDateArray[2].length - 3);
+  const sunrisePeriod = sunriseDateArray[4].toUpperCase();
+  const formattedSunriseTime = `${sunriseTime}${sunrisePeriod}`;
+  const sunriseText = document.querySelector('.sunrise-time');
+  sunriseText.innerText = formattedSunriseTime;
   /*
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
