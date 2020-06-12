@@ -102,20 +102,20 @@ function displayResults(weather) {
   humidityText.innerText = weather.main.humidity;
 
   // Low
-  const lowText = document.querySelector('.low-text');
-  lowText.innerText = `${Math.floor(weather.main.temp_min)}°c`;
+  const lowText = document.querySelector('.low-number');
+  lowText.innerText = Math.floor(weather.main.temp_min);
 
   // High
-  const highText = document.querySelector('.high-text');
-  highText.innerText = `${Math.floor(weather.main.temp_max)}°c`;
+  const highText = document.querySelector('.high-number');
+  highText.innerText = Math.floor(weather.main.temp_max);
 
   // Timezone
   const timezoneText = document.querySelector('.timezone-number');
   timezoneText.innerText = `${UTC}`;
 
   // Wind
-  const windText = document.querySelector('.wind-text');
-  windText.innerText = `${Math.floor(weather.wind.speed)}km/h`;
+  const windText = document.querySelector('.wind-number');
+  windText.innerText = Math.floor(weather.wind.speed);
 
   const windArrow = document.querySelector('.wind-arrow');
   windArrow.style.transform = `rotate(${weather.wind.deg}deg)`;
