@@ -57,7 +57,6 @@ function displayResults(weather) {
   // City name
   searchField.value = `${weather.name}, ${weather.sys.country}`;
   
-  console.log(weather);
   // Visibility
   const visibilityText = document.querySelector('.visibility-text');
   if ('visibility' in weather) {
