@@ -256,6 +256,10 @@ body {
   background-color: transparent;
 }
 
+.search-field:hover {
+  cursor: pointer;
+}
+
 .search-field::placeholder {
   color: #FFFFFF
 }

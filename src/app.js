@@ -5,6 +5,7 @@ const api = {
 
 const searchField = document.querySelector('.search-field');
 searchField.addEventListener('keypress', setQuery);
+searchField.focus();
 
 function setQuery(event) {
   if (event.keyCode === 13) {
