@@ -94,8 +94,8 @@ function displayResults(weather) {
   pressureText.innerText = weather.main.pressure;
 
   // Temperature
-  const temperatureText = document.querySelector('.temperature-text');
-  temperatureText.innerText = `${Math.floor(weather.main.temp)}°c`;
+  const temperatureText = document.querySelector('.temperature-number');
+  temperatureText.innerText = Math.floor(weather.main.temp);
 
   // Humidity
   const humidityText = document.querySelector('.humidity-text');

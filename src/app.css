@@ -216,8 +216,15 @@ body {
 }
 
 .timezone-text {
+  position: relative;
+  bottom: 0.75rem;
   font-size: 3rem;
   line-height: 1.5rem;
+}
+
+.timezone-number {
+  position: relative;
+  top: 0.75rem;
 }
 
 .latitude-heading {
@@ -242,7 +249,7 @@ body {
   grid-column: 1 / 6;
   grid-row: 1 / 2;
   display: flex;
-  background-color: #1E1516;
+  background-color: #000000;
 }
 
 .search-field {
@@ -446,6 +453,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #E9D3C5;
+  transition: 0.25s;
+}
+
+.temperature:hover {
+  background-color: #000000;
 }
 
 .temperature-heading {
@@ -458,14 +470,33 @@ body {
 .temperature-body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .temperature-text {
-  font-size: 10rem;
+  position: relative;
+  bottom: 3rem;
+  font-size: 12rem;
   line-height: 4.5rem;
+}
+
+.temperature-hidden-text {
+  position: absolute;
+  font-size: 3rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.temperature:hover .temperature-hidden-text {
+  visibility: visible;
+}
+
+.temperature-number {
+  position: relative;
+  top: 2.5rem;
 }
 
 .low {
