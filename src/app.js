@@ -58,7 +58,7 @@ function displayResults(weather) {
   searchField.value = `${weather.name}, ${weather.sys.country}`;
   
   // Visibility
-  const visibilityText = document.querySelector('.visibility-text');
+  const visibilityText = document.querySelector('.visibility-number');
   if ('visibility' in weather) {
     const visibilityNumber = weather.visibility.toString().substring(0, 2);
     visibilityText.innerText = `${visibilityNumber}km`;
@@ -67,7 +67,7 @@ function displayResults(weather) {
   }
 
   // Feels Like
-  const feelsLikeText = document.querySelector('.feels-like-text');
+  const feelsLikeText = document.querySelector('.feels-like-number');
   feelsLikeText.innerText = `${Math.floor(weather.main.feels_like)}°c`;
 
   // Date & Time
@@ -110,8 +110,8 @@ function displayResults(weather) {
   highText.innerText = `${Math.floor(weather.main.temp_max)}°c`;
 
   // Timezone
-  const timezoneText = document.querySelector('.timezone-text');
-  timezoneText.innerText = `UTC${UTC}`;
+  const timezoneText = document.querySelector('.timezone-number');
+  timezoneText.innerText = `${UTC}`;
 
   // Wind
   const windText = document.querySelector('.wind-text');
@@ -121,8 +121,8 @@ function displayResults(weather) {
   windArrow.style.transform = `rotate(${weather.wind.deg}deg)`;
 
   // Cloudiness
-  const cloudinessText = document.querySelector('.cloudiness-text');
-  cloudinessText.innerText = `${weather.clouds.all}%`;
+  const cloudinessText = document.querySelector('.cloudiness-number');
+  cloudinessText.innerText = weather.clouds.all;
 }
 
 function timezoneToUTC(timezone) {

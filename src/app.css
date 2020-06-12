@@ -373,7 +373,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 90%;
+  height: 100%;
 }
 
 .pressure-text {
@@ -402,7 +402,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 90%;
+  height: 100%;
 }
 
 .humidity-text {
@@ -584,7 +584,7 @@ body {
 .wind-arrow {
   margin-bottom: 0.5rem;
   max-width: 5rem;
-  transition: 2s;
+  transition: 3s;
 }
 
 .cloudiness {
