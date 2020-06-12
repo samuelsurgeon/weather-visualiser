@@ -17,7 +17,6 @@ body {
   background-color: #E9D3C5;
 }
 
-
 .app-container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
@@ -25,36 +24,166 @@ body {
   grid-gap: 1px;
   height: 100%;
   border: 1px solid #000000;
-  background-color: #000000;
+  background-color: #1E1516;
 }
 
-.empty {
+.empty-1-3-2-3 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
   background-color: #E9D3C5;
 }
 
-.sunrise {
+.empty-5-6-2-3 {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+  background-color: #E9D3C5;
+}
+
+.empty-8-9-2-3 {
+  grid-column: 8 / 9;
+  grid-row: 2 / 3;
+  background-color: #E9D3C5;
+}
+
+.empty-8-9-4-5 {
+  grid-column: 8 / 9;
+  grid-row: 4 / 5;
+  background-color: #E9D3C5;
+}
+
+.empty-4-6-5-6 {
+  grid-column: 4 / 6;
+  grid-row: 5 / 6;
+  background-color: #E9D3C5;
+}
+
+.empty-3-4-6-7 {
+  grid-column: 3 / 4;
+  grid-row: 6 / 7;
+  background-color: #E9D3C5;
+}
+
+.latitude {
+  grid-column: 6 / 8;
+  grid-row: 2 / 3;
+  padding: 0.35rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #FABA63;
+  background-color: #E9D3C5;
+}
+
+.latitude-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 0.5rem;
+  text-align: left;
+}
+
+.latitude-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 90%;
+}
+
+.latitude-text {
+  font-size: 4rem;
+  line-height: 2.5rem;
+}
+
+.longitude {
+  grid-column: 8 / 10;
+  grid-row: 3 / 4;
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #E9D3C5;
+}
+
+.longitude-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 0.5rem;
+  text-align: left;
+}
+
+.longitude-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 90%;
+}
+
+.longitude-text {
+  font-size: 4rem;
+  line-height: 2.5rem;
+}
+
+.sunrise {
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #E9D3C5;
 }
 
 .sunrise-arrow {
-  max-width: 5rem;
+  margin-bottom: 0.5rem;
+  max-width: 2rem;
+}
+
+.sunrise-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 0.5rem;
+  text-align: left;
+}
+
+.sunrise-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.sunrise-text {
+  font-size: 2rem;
+  line-height: 1.5rem;
 }
 
 .sunset {
+  padding: 0.35rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #C9CCD1;
+  background-color: #E9D3C5;
 }
 
 .sunset-arrow {
+  margin-bottom: 0.5rem;
+  max-width: 2rem;
   transform: rotate(180deg);
-  max-width: 5rem;
+}
+
+.sunset-heading {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 0.5rem;
+  text-align: left;
+}
+
+.sunset-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.sunset-text {
+  font-size: 2rem;
+  line-height: 1.5rem;
 }
 
 .weather-icon {
@@ -173,6 +302,8 @@ body {
 }
 
 .api-credit-container {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
   text-decoration: none;
   color: black;
 }
@@ -197,21 +328,32 @@ body {
 }
 
 .feels-like {
+  grid-column: 9 / 10;
+  grid-row: 4 / 5;
   padding: 0.35rem;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
   background-color: #E9D3C5;
 }
 
 .feels-like-heading {
   font-size: 0.7rem;
+  font-weight: 600;
   line-height: 0.5rem;
+  text-align: left;
 }
 
 .feels-like-body {
-  font-size: 2.5rem;
-  line-height: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 90%;
+}
+
+.feels-like-text {
+  font-size: 4rem;
+  line-height: 2.5rem;
 }
 
 .date-time {
@@ -232,20 +374,32 @@ body {
 }
 
 .pressure {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  padding: 0.35rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #C9CCD1;
+  background-color: #E9D3C5;
 }
 
 .pressure-heading {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 0.5rem;
+  text-align: left;
 }
 
 .pressure-body {
-  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 90%;
+}
+
+.pressure-text {
+  font-size: 2rem;
+  line-height: 0.5rem;
 }
 
 .temperature {
@@ -273,8 +427,8 @@ body {
 }
 
 .temperature-text {
-  font-size: 14rem;
-  line-height: 7.5rem;
+  font-size: 10rem;
+  line-height: 4.5rem;
 }
 
 .humidity {
@@ -359,6 +513,8 @@ body {
 }
 
 .website-credit-container {
+  grid-column: 9 / 10;
+  grid-row: 2 / 3;
   text-decoration: none;
   color: black;
 }
