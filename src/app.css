@@ -107,6 +107,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.longitude:hover {
+  background-color: #000000;
+}
+
 .longitude-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -116,15 +120,26 @@ body {
 
 .longitude-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .longitude-text {
   font-size: 4rem;
   line-height: 2.5rem;
+}
+
+.longitude-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.longitude:hover .longitude-hidden-text {
+  visibility: visible;
 }
 
 .sunrise {
@@ -399,6 +414,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.pressure:hover {
+  background-color: #000000;
+}
+
 .pressure-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -408,15 +427,26 @@ body {
 
 .pressure-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .pressure-text {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 0.5rem;
+}
+
+.pressure-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.pressure:hover .pressure-hidden-text {
+  visibility: visible;
 }
 
 .humidity {
@@ -428,6 +458,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.humidity:hover {
+  background-color: #000000;
+}
+
 .humidity-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -437,15 +471,26 @@ body {
 
 .humidity-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .humidity-text {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 0.5rem;
+}
+
+.humidity-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.humidity:hover .humidity-hidden-text {
+  visibility: visible;
 }
 
 .visibility {
