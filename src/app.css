@@ -215,16 +215,32 @@ body {
   background-color: #E9D3C5;
 }
 
+.timezone:hover {
+  background-color: #000000;
+}
+
 .timezone-text {
   position: relative;
-  bottom: 0.75rem;
+  bottom: 0.3rem;
   font-size: 3rem;
   line-height: 1.5rem;
 }
 
+.timezone-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.timezone:hover .timezone-hidden-text {
+  visibility: visible;
+}
+
 .timezone-number {
   position: relative;
-  top: 0.75rem;
+  top: 0.30rem;
 }
 
 .latitude-heading {
@@ -322,6 +338,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.feels-like:hover {
+  background-color: #000000;
+}
+
 .feels-like-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -331,15 +351,26 @@ body {
 
 .feels-like-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .feels-like-text {
   font-size: 4rem;
   line-height: 2.5rem;
+}
+
+.feels-like-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.feels-like:hover .feels-like-hidden-text {
+  visibility: visible;
 }
 
 .date-time {
@@ -508,6 +539,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.low:hover {
+  background-color: #000000;
+}
+
 .low-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -517,15 +552,26 @@ body {
 
 .low-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .low-text {
   font-size: 4rem;
   line-height: 2.5rem;
+}
+
+.low-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.low:hover .low-hidden-text {
+  visibility: visible;
 }
 
 .high {
@@ -537,6 +583,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.high:hover {
+  background-color: #000000;
+}
+
 .high-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -546,15 +596,26 @@ body {
 
 .high-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .high-text {
   font-size: 4rem;
   line-height: 2.5rem;
+}
+
+.high-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.high:hover .high-hidden-text {
+  visibility: visible;
 }
 
 .website-credit-container {
@@ -592,29 +653,38 @@ body {
   background-color: #E9D3C5;
 }
 
-.wind-heading {
-  font-size: 0.7rem;
-  font-weight: 600;
-  line-height: 0.5rem;
-  text-align: left;
+.wind:hover {
+  background-color: #000000;
 }
 
 .wind-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .wind-text {
-  font-size: 5rem;
-  line-height: 4rem;
+  font-size: 4rem;
+  line-height: 3rem;
+}
+
+.wind-hidden-text {
+  position: absolute;
+  font-size: 3rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.wind:hover .wind-hidden-text {
+  visibility: visible;
 }
 
 .wind-arrow {
   margin-bottom: 0.5rem;
-  max-width: 5rem;
+  margin-right: 0.5rem;
+  max-width: 4rem;
   transition: 4s;
 }
 
@@ -627,6 +697,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.cloudiness:hover {
+  background-color: #000000;
+}
+
 .cloudiness-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -636,14 +710,32 @@ body {
 
 .cloudiness-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .cloudiness-text {
-  font-size: 2rem;
+  position: relative;
+  bottom: 1.25rem;
+  font-size: 4rem;
   line-height: 0.5rem;
+}
+
+.cloudiness-number {
+  positionL relative;
+  top: 1.25rem;
+}
+
+.cloudiness-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.cloudiness:hover .cloudiness-hidden-text {
+  visibility: visible;
 }
 
