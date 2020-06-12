@@ -28,7 +28,7 @@ function displayResults(weather) {
   const sunriseTime = sunriseDateArray[2].substring(0, sunriseDateArray[2].length - 3);
   const sunrisePeriod = sunriseDateArray[4].toUpperCase();
   const formattedSunriseTime = `${sunriseTime}${sunrisePeriod}`;
-  const sunriseText = document.querySelector('.sunrise-time');
+  const sunriseText = document.querySelector('.sunrise-text');
   sunriseText.innerText = formattedSunriseTime;
 
   // Sunset Time
@@ -37,41 +37,37 @@ function displayResults(weather) {
   const sunsetTime = sunsetDateArray[2].substring(0, sunsetDateArray[2].length - 3);
   const sunsetPeriod = sunsetDateArray[4].toUpperCase();
   const formattedSunsetTime = `${sunsetTime}${sunsetPeriod}`;
-  const sunsetText = document.querySelector('.sunset-time');
+  const sunsetText = document.querySelector('.sunset-text');
   sunsetText.innerText = formattedSunsetTime;
 
-  // Icon
-  const iconImage = document.querySelector('.weather-icon-image');
-  iconImage.src = `./icons/${weather.weather[0].icon}@4x.png`;
-
   // Weather Description
-  const weatherDescriptionFromApi = weather.weather[0].description;
-  const weatherDescriptionHtml = weatherDescriptionFromApi.replace(/\s/g, '<br>').toUpperCase();
-  const weatherDescriptionText = document.querySelector('.weather-description');
-  weatherDescriptionText.innerHTML = `<h2 class="weather-description-text">${weatherDescriptionHtml}</h2>`;
+  const weatherDescriptionString = weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1);
+  const weatherDescriptionText = document.querySelector('.weather-description-text');
+  weatherDescriptionText.innerText = weatherDescriptionString;
 
   // Coordinates
   const latitude = weather.coord.lat;
   const longitude = weather.coord.lon;
-  const latitudeText = document.querySelector('.latitude-body');
+  const latitudeText = document.querySelector('.latitude-text');
   latitudeText.innerText = latitude;
-  const longitudeText = document.querySelector('.longitude-body');
+  const longitudeText = document.querySelector('.longitude-text');
   longitudeText.innerText = longitude;
 
   // City name
   searchField.value = `${weather.name}, ${weather.sys.country}`;
-
+  
+  console.log(weather);
   // Visibility
-  const visibilityText = document.querySelector('.visibility-body');
+  const visibilityText = document.querySelector('.visibility-text');
   if ('visibility' in weather) {
-    const visibilityNumber = weather.visibility.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    visibilityText.innerText = `${visibilityNumber} m`;
+    const visibilityNumber = weather.visibility.toString().substring(0, 2);
+    visibilityText.innerText = `${visibilityNumber}km`;
   } else {
     visibilityText.innerText = 'No data';
   }
 
   // Feels Like
-  const feelsLikeText = document.querySelector('.feels-like-body');
+  const feelsLikeText = document.querySelector('.feels-like-text');
   feelsLikeText.innerText = `${Math.floor(weather.main.feels_like)}°c`;
 
   // Date & Time
@@ -94,7 +90,7 @@ function displayResults(weather) {
   dateTimeText.innerHTML = `${day} ${time}${period}`;
 
   // Pressure
-  const pressureText = document.querySelector('.pressure-body');
+  const pressureText = document.querySelector('.pressure-text');
   pressureText.innerText = weather.main.pressure;
 
   // Temperature
@@ -102,7 +98,7 @@ function displayResults(weather) {
   temperatureText.innerText = `${Math.floor(weather.main.temp)}°c`;
 
   // Humidity
-  const humidityText = document.querySelector('.humidity-body');
+  const humidityText = document.querySelector('.humidity-text');
   humidityText.innerText = weather.main.humidity;
 
   // Low
@@ -125,7 +121,7 @@ function displayResults(weather) {
   windArrow.style.transform = `rotate(${weather.wind.deg}deg)`;
 
   // Cloudiness
-  const cloudinessText = document.querySelector('.cloudiness-body');
+  const cloudinessText = document.querySelector('.cloudiness-text');
   cloudinessText.innerText = `${weather.clouds.all}%`;
 }
 
