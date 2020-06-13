@@ -197,6 +197,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.sunset:hover {
+  background-color: #000000;
+}
+
 .sunset-arrow {
   margin-bottom: 0.5rem;
   max-width: 2rem;
@@ -212,15 +216,26 @@ body {
 
 .sunset-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .sunset-text {
   font-size: 2rem;
   line-height: 1.5rem;
+}
+
+.sunset-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.sunset:hover .sunset-hidden-text {
+  visibility: visible;
 }
 
 .weather-description {
