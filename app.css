@@ -2,7 +2,6 @@
   --background: #E6E6E6;
   --grid: #CCCCCC;
   --typeface: #1A1A1A;
-  --hiddenTypeface: #E6E6E6;
   --hover: #1A1A1A;
 }
 
@@ -172,7 +171,7 @@ body {
 .latitude-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: var(--hiddenTypeface);
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -361,7 +360,7 @@ body {
 .timezone-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -497,7 +496,7 @@ body {
 .feels-like-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -559,7 +558,7 @@ body {
 .pressure-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -604,7 +603,7 @@ body {
 .humidity-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -704,7 +703,7 @@ body {
 .temperature-hidden-text {
   position: absolute;
   font-size: 3rem;
-  color: var(--hiddenTypeface);
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -754,7 +753,7 @@ body {
 .low-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -799,7 +798,7 @@ body {
 .high-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -863,7 +862,7 @@ body {
 .wind-hidden-text {
   position: absolute;
   font-size: 3rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
@@ -922,7 +921,7 @@ body {
 .cloudiness-hidden-text {
   position: absolute;
   font-size: 2rem;
-  color: #FFFFFF;
+  color: var(--background);
   z-index: 1;
   visibility: hidden;
 }
