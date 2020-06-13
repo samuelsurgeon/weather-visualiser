@@ -1,2 +1,2 @@
 # weather-visualiser
-A visualiser for the weather forecast of different cities
+A weather forecast visualiser for different cities
