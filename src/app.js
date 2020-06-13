@@ -21,6 +21,14 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
+  // City name
+  if (weather.cod === 200) {
+    searchField.value = `${weather.name}, ${weather.sys.country}`;
+  } else {
+    searchField.value = 'City not found...';
+  }
+
+  // Timezone
   const UTC = timezoneToUTC(weather.timezone);
   
   // Sunrise Time
@@ -53,9 +61,6 @@ function displayResults(weather) {
   latitudeText.innerText = latitude;
   const longitudeText = document.querySelector('.longitude-text');
   longitudeText.innerText = longitude;
-
-  // City name
-  searchField.value = `${weather.name}, ${weather.sys.country}`;
   
   // Visibility
   const visibilityText = document.querySelector('.visibility-number');
