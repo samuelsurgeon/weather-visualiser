@@ -3,9 +3,13 @@ const api = {
   baseurl: 'http://api.openweathermap.org/data/2.5/'
 }
 
-const searchField = document.querySelector('.search-field');
-searchField.addEventListener('keypress', setQuery);
-searchField.focus();
+initialiseSearchField();
+
+function initialiseSearchField() {
+  const searchField = document.querySelector('.search-field');
+  searchField.addEventListener('keypress', setQuery);
+  searchField.focus();
+}
 
 function setQuery(event) {
   if (event.keyCode === 13) {
@@ -21,17 +25,35 @@ function getResults(query) {
 }
 
 function displayResults(weather) {
-  // City name
+  const UTC = timezoneToUTC(weather.timezone);
+
+  displayCityName(weather);
+  displaySunriseTime(weather);
+  displaySunsetTime(weather);
+  displayWeatherDescription(weather);
+  displayCoordinates(weather);
+  displayVisibility(weather);
+  displayFeelsLike(weather);
+  displayDateAndTime(weather);
+  displayPressure(weather);
+  displayTemperature(weather);
+  displayHumidity(weather);
+  displayLow(weather);
+  displayHigh(weather);
+  displayTimezone(weather);
+  displayWind(weather);
+  displayCloudiness(weather);
+}
+
+function displayCityName(weather) {
   if (weather.cod === 200) {
     searchField.value = `${weather.name}, ${weather.sys.country}`;
   } else {
     searchField.value = 'City not found...';
   }
+}
 
-  // Timezone
-  const UTC = timezoneToUTC(weather.timezone);
-  
-  // Sunrise Time
+function displaySunriseTime(weather) {
   const sunriseDate = new Date(weather.sys.sunrise * 1000).toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
   const sunriseDateArray = sunriseDate.split(/(\s+)/);
   const sunriseTime = sunriseDateArray[2].substring(0, sunriseDateArray[2].length - 3);
@@ -39,8 +61,9 @@ function displayResults(weather) {
   const formattedSunriseTime = `${sunriseTime}${sunrisePeriod}`;
   const sunriseText = document.querySelector('.sunrise-text');
   sunriseText.innerText = formattedSunriseTime;
+}
 
-  // Sunset Time
+function displaySunsetTime(weather) {
   const sunsetDate = new Date(weather.sys.sunset * 1000).toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
   const sunsetDateArray = sunsetDate.split(/(\s+)/);
   const sunsetTime = sunsetDateArray[2].substring(0, sunsetDateArray[2].length - 3);
@@ -48,21 +71,24 @@ function displayResults(weather) {
   const formattedSunsetTime = `${sunsetTime}${sunsetPeriod}`;
   const sunsetText = document.querySelector('.sunset-text');
   sunsetText.innerText = formattedSunsetTime;
+}
 
-  // Weather Description
+function displayWeatherDescription(weather) {
   const weatherDescriptionString = weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1);
   const weatherDescriptionText = document.querySelector('.weather-description-text');
   weatherDescriptionText.innerText = weatherDescriptionString;
+}
 
-  // Coordinates
+function displayCoordinates(weather) {
   const latitude = weather.coord.lat;
   const longitude = weather.coord.lon;
   const latitudeText = document.querySelector('.latitude-text');
   latitudeText.innerText = latitude;
   const longitudeText = document.querySelector('.longitude-text');
   longitudeText.innerText = longitude;
-  
-  // Visibility
+}
+
+function displayVisibility(weather) {
   const visibilityText = document.querySelector('.visibility-number');
   if ('visibility' in weather) {
     const visibilityNumber = weather.visibility.toString().substring(0, 2);
@@ -70,12 +96,14 @@ function displayResults(weather) {
   } else {
     visibilityText.innerText = 'No data';
   }
+}
 
-  // Feels Like
+function displayFeelsLike(weather) {
   const feelsLikeText = document.querySelector('.feels-like-number');
   feelsLikeText.innerText = `${Math.floor(weather.main.feels_like)}°c`;
+}
 
-  // Date & Time
+function displayDateAndTime(weather) {
   const months = ['January', 'Februrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const dateFromIANA = new Date().toLocaleString('en-AU', { timeZone: IANATimezoneBuilder(UTC) });
@@ -93,39 +121,46 @@ function displayResults(weather) {
   
   const dateTimeText = document.querySelector('.date-time-text');
   dateTimeText.innerHTML = `${day} ${time}${period}`;
+}
 
-  // Pressure
+function displayPressure(weather) {
   const pressureText = document.querySelector('.pressure-text');
   pressureText.innerText = weather.main.pressure;
+}
 
-  // Temperature
+function displayTemperature(weather) {
   const temperatureText = document.querySelector('.temperature-number');
   temperatureText.innerText = Math.floor(weather.main.temp);
+}
 
-  // Humidity
+function displayHumidity(weather) {
   const humidityText = document.querySelector('.humidity-text');
   humidityText.innerText = weather.main.humidity;
+}
 
-  // Low
+function displayLow(weather) {
   const lowText = document.querySelector('.low-number');
   lowText.innerText = Math.floor(weather.main.temp_min);
+}
 
-  // High
+function displayHigh(weather) {
   const highText = document.querySelector('.high-number');
   highText.innerText = Math.floor(weather.main.temp_max);
+}
 
-  // Timezone
+function displayTimezone(weather) {
   const timezoneText = document.querySelector('.timezone-number');
   timezoneText.innerText = `${UTC}`;
+}
 
-  // Wind
+function displayWind(weather) {
   const windText = document.querySelector('.wind-number');
   windText.innerText = Math.floor(weather.wind.speed);
-
   const windArrow = document.querySelector('.wind-arrow');
   windArrow.style.transform = `rotate(${weather.wind.deg}deg)`;
+}
 
-  // Cloudiness
+function displayCloudiness(weather) {
   const cloudinessText = document.querySelector('.cloudiness-number');
   cloudinessText.innerText = weather.clouds.all;
 }
@@ -165,7 +200,6 @@ function IANATimezoneBuilder(UTC) {
     '13': 'Pacific/Enderbury',
     '14': 'Pacific/Kiritimati'
   }
-
   return timezones[UTC];
 }
 
