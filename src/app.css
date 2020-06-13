@@ -502,6 +502,10 @@ body {
   background-color: #E9D3C5;
 }
 
+.visibility:hover {
+  background-color: #000000;
+}
+
 .visibility-heading {
   font-size: 0.7rem;
   font-weight: 600;
@@ -511,15 +515,33 @@ body {
 
 .visibility-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .visibility-text {
-  font-size: 2rem;
+  position: relative;
+  bottom: 1rem;
+  font-size: 3rem;
   line-height: 0.5rem;
+}
+
+.visibility-number {
+  position: relative;
+  top: 0.75rem;
+}
+
+.visibility-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.visibility:hover .visibility-hidden-text {
+  visibility: visible;
 }
 
 .temperature {
