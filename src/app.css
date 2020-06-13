@@ -165,9 +165,13 @@ body {
   background-color: #E9D3C5;
 }
 
+.sunrise:hover {
+  background-color: #000000;
+}
+
 .sunrise-arrow {
-  margin-bottom: 0.5rem;
-  max-width: 2rem;
+  margin-bottom: 0.15rem;
+  max-width: 1.65rem;
 }
 
 .sunrise-heading {
@@ -179,15 +183,26 @@ body {
 
 .sunrise-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .sunrise-text {
   font-size: 2rem;
   line-height: 1.5rem;
+}
+
+.sunrise-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.sunrise:hover .sunrise-hidden-text {
+  visibility: visible;
 }
 
 .sunset {
@@ -202,8 +217,8 @@ body {
 }
 
 .sunset-arrow {
-  margin-bottom: 0.5rem;
-  max-width: 2rem;
+  margin-bottom: 0.15rem;
+  max-width: 1.65rem;
   transform: rotate(180deg);
 }
 
