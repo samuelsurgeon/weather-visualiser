@@ -1,6 +1,6 @@
 const api = {
   key: '065e59b2def287cba1ade3fe142d7bc4',
-  baseurl: 'http://api.openweathermap.org/data/2.5/'
+  baseurl: 'https://api.openweathermap.org/data/2.5/'
 }
 
 initialiseSearchField();
