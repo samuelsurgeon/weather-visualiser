@@ -76,6 +76,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #E9D3C5;
+  transition: 0.25s;
+}
+
+.latitude:hover {
+  background-color: #000000;
 }
 
 .latitude-heading {
@@ -87,15 +92,26 @@ body {
 
 .latitude-body {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 90%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .latitude-text {
   font-size: 4rem;
   line-height: 2.5rem;
+}
+
+.latitude-hidden-text {
+  position: absolute;
+  font-size: 2rem;
+  color: #FFFFFF;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.latitude:hover .latitude-hidden-text {
+  visibility: visible;
 }
 
 .longitude {
