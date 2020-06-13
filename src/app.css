@@ -1,3 +1,33 @@
+@media only screen and (min-width: 300px) {
+  html {
+    font-size: 0.25em;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  html {
+    font-size: 0.35em;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 0.45em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  html {
+    font-size: 0.65em;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
