@@ -3,6 +3,7 @@
   --grid: #CCCCCC;
   --typeface: #1A1A1A;
   --hover: #1A1A1A;
+  --selection: #E9D3C5;
 }
 
 @media only screen and (min-width: 300px) {
@@ -419,7 +420,7 @@ body {
 }
 
 .search-field::selection {
-  background-color: #E9D3C5;
+  background-color: var(--selection);
 }
 
 .city {
@@ -427,7 +428,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E9D3C5;
 }
 
 .city-text {
@@ -442,7 +442,7 @@ body {
 }
 
 .api-credit-container:hover {
-  border: 1px solid #000000;
+  border: 1px solid var(--typeface);
   transform: scale(1.1);
   transition: 0.4s;
 }
